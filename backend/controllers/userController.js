@@ -1,10 +1,10 @@
 import asyncHandler from 'express-async-handler';
 
 // @desc Auth user/set token
-// route POST /api/usuarios/auth
+// route POST /api/usuarios/login
 // @access Public
 const authUser = asyncHandler(async (req, res) => {
-    res.status(200).json({ message: 'Autenticação de Usuário' });
+    res.status(200).json({ message: 'Login do Usuário' });
 });
 
 // @desc Register a new user
@@ -15,10 +15,10 @@ const registerUser = asyncHandler(async (req, res) => {
 });
 
 // @desc Logout user
-// route POST /api/usuarios/logout
+// route POST /api/usuarios/sair
 // @access Public
 const logoutUser = asyncHandler(async (req, res) => {
-    res.status(200).json({ message: 'Logout de Usuário' });
+    res.status(200).json({ message: 'Deslogar Usuário' });
 });
 
 // @desc Get user profile

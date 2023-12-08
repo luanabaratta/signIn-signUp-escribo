@@ -7,9 +7,9 @@ import {
     getUserProfile,
     updateUserProfile} from "../controllers/userController.js";
 
-router.post('/', authUser);
-router.post('/auth', authUser);
-router.post('/logout', logoutUser);
+router.post('/', registerUser);
+router.post('/login', authUser);
+router.post('/sair', logoutUser);
 router.route('/perfil').get(getUserProfile).put(updateUserProfile);
 
 
