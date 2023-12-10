@@ -1,16 +1,5 @@
 import mongoose from "mongoose";
-
-const phoneSchema = mongoose.Schema({
-    number: {
-        type: String,
-        match: "(?:(?<=^)|(?<=\D))((00|\+)?55(\s|\.|-)*)?((\()?0?\d{2}(?(5)\)|)(\s|\.|-)*)?(9(\s|\.|-)*)?\d{4}(\s|\.|-)*\d{4}(?=\D|$)",
-        required: true
-    },
-    ddd: {
-        type: String,
-        required: true
-    }
-});
+import bcrypt from 'bcryptjs';
 
 const userSchema = mongoose.Schema({
    name: {
@@ -26,9 +15,27 @@ const userSchema = mongoose.Schema({
        type: String,
        required: true
    },
-   phones: [phoneSchema]
+    telephones: [{
+        ddd: {
+            type: String,
+            required: true
+        },
+        number: {
+            type: String,
+            required: true
+        }
+    }],
 }, {
     timestamps: true
+});
+
+userSchema.pre('save', async function (next) {
+   if (!this.isModified('password')) {
+       next();
+   }
+
+   const salt = await bcrypt.genSalt(10);
+   this.password = await bcrypt.hash(this.password, salt);
 });
 
 const User = mongoose.model('User', userSchema);
