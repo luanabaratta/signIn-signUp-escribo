@@ -16,15 +16,11 @@ const registerUser = asyncHandler(async (req, res) => {
         res.status(400);
         throw new Error('E-mail já existente');
     }
-
-    const { ddd } = telephones[0];
-    const { number } = telephones[0];
-
     const user = await User.create({
         name,
         email,
         password,
-        telephones: [{ ddd, number }]
+        telephones: telephones.map(({ ddd, number }) => ({ ddd, number })),
     });
 
     if(user) {
@@ -33,7 +29,7 @@ const registerUser = asyncHandler(async (req, res) => {
            name: user.name,
            email: user.email,
            password: user.password,
-           telephones: telephones,
+           telephones: user.telephones,
         });
     } else {
         res.status(400);
