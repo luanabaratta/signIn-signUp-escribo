@@ -18,7 +18,7 @@ const registerUser = asyncHandler(async (req, res) => {
 // route POST /api/usuarios/sair
 // @access Public
 const logoutUser = asyncHandler(async (req, res) => {
-    res.status(200).json({ message: 'Deslogar Usuário' });
+    res.status(200).json({ message: 'Logout de Usuário' });
 });
 
 // @desc Get user profile

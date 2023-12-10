@@ -10,7 +10,7 @@ const errorHandler = (err, req, res, next) => {
 
     if(err.name === 'CastError!' && err.kind === 'ObjectId') {
         statusCode = 404;
-        message = 'Recurso não encontrado';
+        message = 'Rota não encontrada';
     }
 
     res.status(statusCode).json({
