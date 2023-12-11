@@ -1,7 +1,11 @@
-import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from 'react-router-dom';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 import FormContainer from "../components/FormContainer";
+import { toast } from "react-toastify";
+import { useDispatch, useSelector } from "react-redux";
+import { useRegisterMutation } from "../slices/usersApiSlice.js";
+import { setCredentials } from "../slices/authSlice.js";
 
 const RegisterScreen = () => {
     const [name, setName] = useState('');
@@ -10,10 +14,34 @@ const RegisterScreen = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const [register, { isLoading }] = useRegisterMutation();
+
+    const { userInfo } = useSelector((state) => state.auth);
+
+    useEffect(() => {
+        if (userInfo) {
+            navigate('/');
+        }
+    }, [navigate, userInfo]);
+
     const submitHandler = async (e) => {
         e.preventDefault();
-        console.log('submit');
-    }
+
+        if (password !== confirmPassword) {
+            toast.error('A senha não é a mesma');
+        } else {
+            try {
+                const res = await register({ name, email, password }).unwrap();
+                dispatch(setCredentials({ ...res }));
+                navigate('/');
+            } catch (err) {
+                toast.error(err?.data?.message || err.error);
+            }
+        }
+    };
 
     const handleTelephoneChange = (index, key, value) => {
         const newTelephones = [...telephones];
