@@ -12,6 +12,18 @@ Login
 Perfil
 ![image](https://github.com/luanabaratta/signIn-signUp-escribo/assets/68722599/405bb438-5a72-4e28-adf3-05876bf2bad9)
 
+## It includes the following:
+
+Backend API with Express & MongoDB
+Routes for auth, logout, register, profile, update profile
+JWT authentication stored in HTTP-only cookie
+Protected routes and endpoints
+Custom middleware to check JSON web token and store in cookie
+Custom error middleware
+React frontend to register, login, logout, view profile, and update profile
+React Bootstrap UI library
+React Toastify notifications
+
 
 
 
