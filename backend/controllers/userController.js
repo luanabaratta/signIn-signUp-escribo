@@ -62,12 +62,42 @@ const logoutUser = asyncHandler(async (req, res) => {
 
 // api/usuarios/perfil @access Private
 const getUserProfile = asyncHandler(async (req, res) => {
-    res.status(200).json({ message: 'Perfil do Usuário' });
+    const user = {
+        _id: req.user._id,
+        name: req.user.name,
+        email: req.user.email,
+        telephones: req.user.telephones
+    }
+    res.status(200).json(user);
 });
 
 // api/usuarios/perfil @access Private
 const updateUserProfile = asyncHandler(async (req, res) => {
-    res.status(200).json({ message: 'Atualizar o perfil' });
+    const user = await User.findById(req.user._id);
+
+    if (user) {
+        user.name = req.body.name || user.name;
+        user.email = req.body.email || user.email;
+        user.telephones = req.body.telephones || user.telephones;
+
+        if(req.body.password) {
+            user.password = req.body.password;
+        }
+
+        const updateUser = await user.save();
+
+        res.status(200).json({
+            _id: updateUser._id,
+            name: updateUser.name,
+            email: updateUser.email,
+            telephones: updateUser.telephones,
+        })
+    } else {
+        res.status(404);
+        throw new Error('Usuário não encontrado');
+    }
+
+
 });
 
 export {
