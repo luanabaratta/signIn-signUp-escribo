@@ -6,6 +6,7 @@ import FormContainer from "../components/FormContainer";
 import { useLoginMutation } from "../slices/usersApiSlice.js";
 import { setCredentials } from "../slices/authSlice.js";
 import { toast }  from "react-toastify";
+import Loader from '../components/Loader.jsx';
 
 const LoginScreen = () => {
     const [email, setEmail] = useState('');
@@ -62,7 +63,7 @@ const LoginScreen = () => {
                     </Form.Control>
                 </Form.Group>
 
-                { isLoading && <h2>Carregando...</h2>}
+                { isLoading && <Loader />}
 
                 <Button type='submit' variant='primary' className='mt-3'>Entrar</Button>
 

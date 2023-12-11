@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { useRegisterMutation } from "../slices/usersApiSlice.js";
 import { setCredentials } from "../slices/authSlice.js";
+import Loader from '../components/Loader.jsx';
 
 const RegisterScreen = () => {
     const [name, setName] = useState('');
@@ -85,44 +86,44 @@ const RegisterScreen = () => {
                     </Form.Control>
                 </Form.Group>
 
-                <Form.Group className="my-2" controlId={telephones}>
-                    <Form.Label>Telefones</Form.Label>
-                    {telephones.map((telephone, index) => (
-                        <div key={index}>
-                            <Row>
-                                <Col>
-                                    <Form.Control
-                                        type="text"
-                                        placeholder="DDD"
-                                        value={telephone.ddd}
-                                        onChange={(e) => handleTelephoneChange(index, 'ddd', e.target.value)}
-                                        className="mt-2"
-                                    />
-                                </Col>
-                                <Col>
-                                    <Form.Control
-                                        type="text"
-                                        placeholder="Número"
-                                        value={telephone.number}
-                                        onChange={(e) => handleTelephoneChange(index, 'number', e.target.value)}
-                                        className="mt-2"
-                                    />
-                                </Col>
-                                <Col>
-                                    <Button
-                                        variant="danger"
-                                        className="mt-2 btn-close"
-                                        onClick={() => removeTelephone(index)}
-                                    />
-                                </Col>
-                            </Row>
-                        </div>
-                    ))}
-                    <br/>
-                    <Button variant="secondary" onClick={addTelephone} className="mt-2">
-                        Adicionar Tel.
-                    </Button>
-                </Form.Group>
+                {/*<Form.Group className="my-2" controlId={telephones}>*/}
+                {/*    <Form.Label>Telefones</Form.Label>*/}
+                {/*    {telephones.map((telephone, index) => (*/}
+                {/*        <div key={index}>*/}
+                {/*            <Row>*/}
+                {/*                <Col>*/}
+                {/*                    <Form.Control*/}
+                {/*                        type="text"*/}
+                {/*                        placeholder="DDD"*/}
+                {/*                        value={telephone.ddd}*/}
+                {/*                        onChange={(e) => handleTelephoneChange(index, 'ddd', e.target.value)}*/}
+                {/*                        className="mt-2"*/}
+                {/*                    />*/}
+                {/*                </Col>*/}
+                {/*                <Col>*/}
+                {/*                    <Form.Control*/}
+                {/*                        type="text"*/}
+                {/*                        placeholder="Número"*/}
+                {/*                        value={telephone.number}*/}
+                {/*                        onChange={(e) => handleTelephoneChange(index, 'number', e.target.value)}*/}
+                {/*                        className="mt-2"*/}
+                {/*                    />*/}
+                {/*                </Col>*/}
+                {/*                <Col>*/}
+                {/*                    <Button*/}
+                {/*                        variant="danger"*/}
+                {/*                        className="mt-2 btn-close"*/}
+                {/*                        onClick={() => removeTelephone(index)}*/}
+                {/*                    />*/}
+                {/*                </Col>*/}
+                {/*            </Row>*/}
+                {/*        </div>*/}
+                {/*    ))}*/}
+                {/*    <br/>*/}
+                {/*    <Button variant="secondary" onClick={addTelephone} className="mt-2">*/}
+                {/*        Adicionar Tel.*/}
+                {/*    </Button>*/}
+                {/*</Form.Group>*/}
 
                 <Form.Group className='my-2' controlId={password}>
                     <Form.Label>Senha</Form.Label>
@@ -135,7 +136,7 @@ const RegisterScreen = () => {
                     </Form.Control>
                 </Form.Group>
                 <Form.Group className='my-2' controlId={confirmPassword}>
-                    <Form.Label>Confirme a sua senha</Form.Label>
+                    <Form.Label>Confirmar Senha</Form.Label>
                     <Form.Control
                         type='password'
                         placeholder='Confirme a sua senha'
@@ -144,6 +145,8 @@ const RegisterScreen = () => {
                     >
                     </Form.Control>
                 </Form.Group>
+
+                {isLoading && <Loader/>}
 
                 <Button type='submit' variant='primary' className='mt-3'>Cadastrar</Button>
 

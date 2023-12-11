@@ -33,7 +33,7 @@ const registerUser = asyncHandler(async (req, res) => {
         name,
         email,
         password,
-        telephones: telephones.map(({ ddd, number }) => ({ ddd, number })),
+        // telephones: telephones.map(({ ddd, number }) => ({ ddd, number })),
     });
 
     if(user) {
@@ -42,7 +42,7 @@ const registerUser = asyncHandler(async (req, res) => {
            _id: user._id,
            name: user.name,
            email: user.email,
-           telephones: user.telephones,
+           // telephones: user.telephones,
         });
     } else {
         res.status(400);
