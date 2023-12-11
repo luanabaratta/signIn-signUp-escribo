@@ -14,15 +14,22 @@ Perfil
 
 ## It includes the following:
 
-* Backend API with Express & MongoDB
-Routes for auth, logout, register, profile, update profile
-JWT authentication stored in HTTP-only cookie
-Protected routes and endpoints
-Custom middleware to check JSON web token and store in cookie
-Custom error middleware
-React frontend to register, login, logout, view profile, and update profile
-React Bootstrap UI library
-React Toastify notifications
+* Backend API with Express & MongoDB</br>
+* Routes for auth, logout, register, profile, update profile</br>
+* JWT authentication stored in HTTP-only cookie</br>
+* Protected routes and endpoints</br>
+* Custom middleware to check JSON web token and store in cookie</br>
+* Custom error middleware</br>
+* React frontend to register, login, logout, view profile, and update profile</br>
+* React Bootstrap UI library</br>
+* React Toastify notifications</br>
+
+## Usage
+```javascript
+import copyCodeBlock from '@pickra/copy-code-block';
+// OR
+const copyCodeBlock = require('@pickra/copy-code-block');
+```
 
 
 
