@@ -96,8 +96,6 @@ const updateUserProfile = asyncHandler(async (req, res) => {
         res.status(404);
         throw new Error('Usuário não encontrado');
     }
-
-
 });
 
 export {
