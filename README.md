@@ -25,10 +25,14 @@ Perfil
 * React Toastify notifications</br>
 
 ## Usage
-```javascript
-import copyCodeBlock from '@pickra/copy-code-block';
-// OR
-const copyCodeBlock = require('@pickra/copy-code-block');
+
+Add _.env_ file
+
+```
+  NODE_ENV = development
+  PORT = 4000
+  MONGO_URI = your mongodb uri
+  JWT_SECRET = 'your secret'
 ```
 
 
