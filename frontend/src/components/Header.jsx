@@ -13,10 +13,10 @@ const Header = () => {
                     <Navbar.Collapse id='basic-navbar-nav'>
                         <Nav className='ms-auto'>
                             <Nav.Link href='/login'>
-                                <FaSignInAlt /> Login
+                                <FaSignInAlt />   Entrar
                             </Nav.Link>
                             <Nav.Link href='/login'>
-                                <FaSignOutAlt /> Cadastrar
+                                <FaSignOutAlt />  Cadastrar
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

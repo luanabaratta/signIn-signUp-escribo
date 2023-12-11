@@ -1,9 +1,10 @@
 import React from 'react';
+import Hero from "../components/Hero.jsx";
 
 const HomeScreen = () => {
     return (
         <>
-            <h1>HomeScreen</h1>
+            <Hero />
         </>
     );
 
