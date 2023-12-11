@@ -12,6 +12,10 @@ Login
 Profile
 ![image](https://github.com/luanabaratta/signIn-signUp-escribo/assets/68722599/405bb438-5a72-4e28-adf3-05876bf2bad9)
 
+## Test
+![image](https://github.com/luanabaratta/signIn-signUp-escribo/assets/68722599/034699aa-23d4-480d-b01d-597da52f1c3b)
+
+
 ## It includes the following:
 
 * Backend API with Express & MongoDB</br>
