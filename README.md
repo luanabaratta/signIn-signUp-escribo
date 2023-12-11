@@ -1,4 +1,17 @@
-# signIn-signUp-escribo
+# Sign In Sign Up Escribo
+
+
+## It includes the following:
+
+* Backend API with Express & MongoDB</br>
+* Routes for auth, logout, register, profile, update profile</br>
+* JWT authentication stored in HTTP-only cookie</br>
+* Protected routes and endpoints</br>
+* Custom middleware to check JSON web token and store in cookie</br>
+* Custom error middleware</br>
+* React frontend to register, login, logout, view profile, and update profile</br>
+* React Bootstrap UI library</br>
+* React Toastify notifications</br>
 
 Home Page
 ![image](https://github.com/luanabaratta/signIn-signUp-escribo/assets/68722599/a6d872df-d31f-44e8-b220-10ed955c12cc)
@@ -14,19 +27,6 @@ Profile
 
 ## Test
 ![image](https://github.com/luanabaratta/signIn-signUp-escribo/assets/68722599/034699aa-23d4-480d-b01d-597da52f1c3b)
-
-
-## It includes the following:
-
-* Backend API with Express & MongoDB</br>
-* Routes for auth, logout, register, profile, update profile</br>
-* JWT authentication stored in HTTP-only cookie</br>
-* Protected routes and endpoints</br>
-* Custom middleware to check JSON web token and store in cookie</br>
-* Custom error middleware</br>
-* React frontend to register, login, logout, view profile, and update profile</br>
-* React Bootstrap UI library</br>
-* React Toastify notifications</br>
 
 ## Usage
 
