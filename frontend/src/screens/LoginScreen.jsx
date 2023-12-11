@@ -5,10 +5,10 @@ import FormContainer from "../components/FormContainer";
 
 const LoginScreen = () => {
     const [email, setEmail] = useState('');
-    const [passsword, setPassword] = useState('');
+    const [password, setPassword] = useState('');
 
-    const submitHandler = async (event) => {
-        event.preventDefault();
+    const submitHandler = async (e) => {
+        e.preventDefault();
         console.log('submit');
     }
 
@@ -28,12 +28,12 @@ const LoginScreen = () => {
                     </Form.Control>
                 </Form.Group>
 
-                <Form.Group className='my-2' controlId={passsword}>
+                <Form.Group className='my-2' controlId={password}>
                     <Form.Label>Senha</Form.Label>
                     <Form.Control
-                        type='passsword'
+                        type='password'
                         placeholder='Insira a sua senha'
-                        value={passsword}
+                        value={password}
                         onChange={(event) => setPassword(e.target.value)}
                     >
                     </Form.Control>
