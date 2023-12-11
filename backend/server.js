@@ -6,6 +6,7 @@ import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import connectDB from "./config/db.js";
 const port = process.env.PORT || 8000;
 import userRoutes from "./routes/userRoutes.js";
+import * as path from "path";
 
 connectDB();
 
@@ -18,7 +19,15 @@ app.use(cookieParser());
 
 app.use('/api/usuarios', userRoutes);
 
-app.get('/', (req, res) => res.send('Servidor rodando'));
+if(process.env.NODE_DEV === 'production') {
+    const __dirname = path.resolve();
+    app.use(express.static(path.join(__dirname, 'frontend/dist')));
+
+    app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend', 'dist',
+    'index.html')));
+} else {
+    app.get('/', (req, res) => res.send('Servidor rodando'));
+}
 
 app.use(notFound);
 app.use(errorHandler);
