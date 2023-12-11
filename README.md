@@ -26,7 +26,15 @@ Profile
 ![image](https://github.com/luanabaratta/signIn-signUp-escribo/assets/68722599/405bb438-5a72-4e28-adf3-05876bf2bad9)
 
 ## Test
+
+Register
 ![image](https://github.com/luanabaratta/signIn-signUp-escribo/assets/68722599/034699aa-23d4-480d-b01d-597da52f1c3b)
+
+Login
+![image](https://github.com/luanabaratta/signIn-signUp-escribo/assets/68722599/be65d66b-fcc9-45aa-84a9-b4a0f09a5056)
+
+Profile
+![image](https://github.com/luanabaratta/signIn-signUp-escribo/assets/68722599/c676dc1e-4e59-4584-8f81-74c517a0e20b)
 
 ## Usage
 
