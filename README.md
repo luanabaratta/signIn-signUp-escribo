@@ -26,6 +26,8 @@ Perfil
 
 ## Usage
 
+### Env Variables
+
 Add _.env_ file
 
 ```
@@ -34,6 +36,35 @@ Add _.env_ file
   MONGO_URI = your mongodb uri
   JWT_SECRET = 'your secret'
 ```
+
+### Install Dependencies
+
+```
+  npm install
+  cd frontend
+  npm install
+```
+
+### Run
+
+```
+  # Run frontend (:3000) & backend (:4000)
+  npm run dev
+  
+  # Run backend only
+  npm run server
+```
+
+## Build & Deploy
+
+```
+  # Create frontend prod build
+  cd frontend
+  npm run build
+```
+
+
+
 
 
 
